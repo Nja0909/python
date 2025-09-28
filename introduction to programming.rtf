@@ -1,0 +1,224 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset2 Wingdings;}}
+{\*\generator Riched20 10.0.22000}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs22\lang9 Module 2 \f1\endash  Introduction to Programming\par
+Overview of C Programming\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Write an essay covering the history and evolution of C programming. Explain\par
+its importance and why it is still used today.\par
+\b0 C was developed by Dennis Ritchie in the early 1970s at Bell Labs. It evolved from earlier languages such as B and BCPL. The language was originally designed for implementing the UNIX operating system, and its efficiency and portability made it popular across various platforms.\par
+Over time, C became the foundation for many other languages, including C++, Java, and C#. The ANSI C standard (1989) and later the ISO C standard (1990) helped ensure consistency across compilers.\par
+Importance Today:\par
+Close to hardware (low-level operations)\par
+High performance\par
+Portability\par
+Widely used in system software, embedded systems, and game development\b\par
+LAB EXERCISE:\par
+o Research and provide three real-world applications where C programming is\par
+extensively used, such as in embedded systems, operating systems, or game\par
+development.\par
+\b0 Application Area\tab            Examples\tab\tab\tab Why C is Used\par
+Embedded Systems\tab Microcontrollers, IoT devices\tab Fast, memory-efficient, close to hardware\par
+Operating Systems\tab UNIX, Linux, Windows Kernel\tab Portable, system-level access, high control\par
+Game Development\tab Unreal Engine, Retro games\tab Fast execution, real-time processing\par
+\b\par
+2. Setting Up Environment\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Describe the steps to install a C compiler (e.g., GCC) and set up an Integrated\par
+Development Environment (IDE) like DevC++, VS Code, or CodeBlocks.\par
+\b0 Installing GCC (Windows):\par
+Download MinGW (Minimalist GNU for Windows)\par
+Install and add bin folder path to the system\rquote s Environment Variables\par
+Verify installation using gcc --version in CMD\par
+IDE Setup:\par
+DevC++:\par
+Lightweight C/C++ IDE\par
+Comes bundled with a compiler\par
+CodeBlocks:\par
+Download setup with MinGW\par
+Install and select compiler\par
+VS Code:\par
+Install VS Code\par
+Install extensions: "C/C++" by Microsoft\par
+Install GCC separately\par
+Configure tasks.json and launch.json for building and debugging\par
+\par
+\b 3. Basic Structure of a C Program\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Explain the basic structure of a C program, including headers, main function,\par
+comments, data types, and variables. Provide examples.\par
+\b0 #include <stdio.h> // Header\par
+int main() \{ // Main function\par
+    // Comments explain code\par
+    int a = 5; // Variable declaration\par
+    printf("Value: %d", a); // Output\par
+    return 0; // End of program\par
+\}\par
+Headers: Include libraries (#include)\par
+Main function: Entry point of execution\par
+Comments: // single-line or /* multi-line */\par
+Data Types: int, float, char, etc.\par
+Variables: Store data values\par
+\par
+\b 4. Operators in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Write notes explaining each type of operator in C: arithmetic, relational,\par
+logical, assignment, increment/decrement, bitwise, and conditional operators.\par
+\b0 Arithmetic: +, -, *, /, %\par
+Relational: ==, !=, <, >, <=, >=\par
+Logical: &&, ||, !\par
+Assignment: =, +=, -=, *=, /=\par
+Increment/Decrement: ++, --\par
+Bitwise: &, |, ^, ~, <<, >>\par
+Conditional (Ternary): condition ? true : false\par
+\par
+\b 5. Control Flow Statements in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+Explain decision-making statements in C (if, else, nested if-else, switch).\par
+Provide examples of each.\par
+\b0 int x = 5;\par
+if (x > 0) \{\par
+    printf("Positive");\par
+\} else if (x < 0) \{\par
+    printf("Negative");\par
+\} else \{\par
+    printf("Zero");\par
+\}\par
+int day = 2;\par
+switch(day) \{\par
+    case 1: printf("Monday"); break;\par
+    case 2: printf("Tuesday"); break;\par
+    default: printf("Other day");\par
+\}\par
+f/else: Executes based on conditions\par
+\par
+nested if-else: Conditions within conditions\par
+\par
+switch: For multiple choice selections\par
+\par
+\b 6. Looping in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Compare and contrast while loops, for loops, and do-while loops. Explain the\par
+scenarios in which each loop is most appropriate.\par
+\b0 // for loop\par
+for (int i = 0; i < 5; i++) printf("%d ", i);\par
+// while loop\par
+int j = 0;\par
+while (j < 5) \{\par
+    printf("%d ", j);\par
+    j++;\par
+\}\par
+// do-while loop\par
+int k = 0;\par
+do \{\par
+    printf("%d ", k);\par
+    k++;\par
+\} while (k < 5);\b\par
+\b0 for loop: When iteration count is known\par
+while loop: When condition is checked before execution\par
+do-while loop: Executes at least once\par
+\b\par
+7. Loop Control Statements\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Explain the use of break, continue, and goto statements in C. Provide\par
+examples of each.\par
+\b0 break: Exit loop immediately\par
+for (int i = 0; i < 10; i++) \{\par
+    if (i == 5) break;\par
+\}\par
+continue: Skip current iteration\par
+for (int i = 0; i < 10; i++) \{\par
+    if (i == 5) continue;\par
+\}\par
+goto: Jump to labeled section (not recommended)\par
+goto end;\par
+printf("Skipped");\par
+end:\par
+printf("Reached");\par
+\b\par
+8. Functions in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o What are functions in C? Explain function declaration, definition, and how to\par
+call a function. Provide examples.\par
+\b0 // Declaration\par
+int add(int, int);\par
+\par
+// Definition\par
+int add(int a, int b) \{\par
+    return a + b;\par
+\}\par
+\par
+// Calling\par
+int result = add(5, 3);\par
+Function Declaration: Prototype\par
+Definition: Actual body\par
+Calling: Execute function from main or other functions\b\par
+\par
+9. Arrays in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Explain the concept of arrays in C. Differentiate between one-dimensional and\par
+multi-dimensional arrays with examples..\par
+\b0 int arr[3] = \{1, 2, 3\}; // 1D array\par
+int mat[2][2] = \{\{1,2\}, \{3,4\}\}; // 2D array\par
+1D array: Linear collection\par
+2D array: Matrix-like structure\par
+Used to store multiple data elements of same type\par
+\b\par
+10. Pointers in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Explain what pointers are in C and how they are declared and initialized. Why\par
+are pointers important in C?\par
+\b0 int a = 10;\par
+int *p = &a;\par
+printf("%d", *p); // Dereferencing\par
+Pointers: Store memory address of variables\par
+Declaration: int *p\par
+Important for dynamic memory, function arguments, and data structures\par
+\b\par
+11. Strings in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Explain string handling functions like strlen(), strcpy(), strcat(),\par
+strcmp(), and strchr(). Provide examples of when these functions are\par
+useful.\par
+\b0 char str[20] = "Hello";\par
+strlen(str); // length\par
+strcpy(dest, str); // copy\par
+strcat(str1, str2); // concatenate\par
+strcmp(str1, str2); // compare\par
+strchr(str, 'e'); // find character\par
+String handling via string.h\par
+Strings are arrays of characters ending with \\0\par
+\b\par
+12. Structures in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Explain the concept of structures in C. Describe how to declare, initialize, and\par
+access structure members.\par
+\b0 struct Student \{\par
+    int id;\par
+    char name[50];\par
+\}\par
+struct Student s1 = \{1, "Nina"\};\par
+printf("%d %s", s1.id, s1.name);\par
+Structure: Custom data type for grouping variables\par
+Use . operator to access members\par
+\b\par
+13. File Handling in C\par
+\f2\'b7\f0  THEORY EXERCISE:\par
+o Explain the importance of file handling in C. Discuss how to perform file\par
+operations like opening, closing, reading, and writing files.\par
+\b0 13. File Handling in C\par
+c\par
+Copy\par
+Edit\par
+FILE *fp;\par
+fp = fopen("file.txt", "w");\par
+fprintf(fp, "Hello, file!");\par
+fclose(fp);\par
+fopen(): Open file\par
+fclose(): Close file\par
+fscanf()/fprintf(): Read/write formatted\par
+fread()/fwrite(): For binary files\par
+Enables persistent data storage\par
+\b\par
+\f2\par
+}
+ 
