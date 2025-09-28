@@ -1,0 +1,650 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset2 Wingdings;}{\f3\fnil\fcharset1 Segoe UI Symbol;}{\f4\fnil\fcharset1 Segoe UI Symbol;}{\f5\fnil\fcharset1 Cambria Math;}{\f6\fnil Segoe UI Symbol;}{\f7\fnil\fcharset1 Segoe UI Emoji;}{\f8\fnil\fcharset0 Segoe UI Symbol;}{\f9\fnil\fcharset161 Calibri;}}
+{\*\generator Riched20 10.0.22000}{\*\mmathPr\mmathFont5\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs22\lang9 Module 7) Python \f1\endash  Collections, functions and Modules \par
+\par
+Accessing List \par
+Theory: \par
+ \par
+\f2\'b7\f0  Understanding how to create and access elements in a list. \par
+\b0 A list is a sequence of elements enclosed within square brackets [ ] and separated by commas. Each item in the list is called an element or item, and it can be of any data type such as integers, strings, floats, or even other lists.\par
+\f3\u-10179?\u-8903?\f1  \f0 Example:\par
+numbers = [10, 20, 30, 40, 50]\par
+fruits = ["apple", "banana", "cherry"]\par
+mixed = [1, "hello", 3.14, True]\par
+Here, we have created three lists:\par
+numbers contains integers\par
+fruits contains strings\par
+mixed contains elements of different data types\par
+\f3\u-10179?\u-8903?\f1  \f0 Accessing List Elements:\par
+To access individual elements of a list, we use index numbers. Indexing allows us to refer to specific positions in the list.\par
+For example:\par
+print(fruits[0])   # Output: apple\par
+print(fruits[2])   # Output: cherry\par
+This is called indexing, and Python uses zero-based indexing, which means the first element is at index 0, the second at 1, and so on.\par
+\par
+\b\par
+\f2\'b7\f0  Indexing in lists (positive and negative indexing). \par
+\b0 Positive Indexing\par
+Positive indexing starts from the left of the list, beginning at 0.\par
+Consider the list:\par
+letters = ["a", "b", "c", "d", "e"]\par
+Element\tab Index\par
+"a"\tab\tab 0\par
+"b"\tab\tab 1\par
+"c"\tab\tab 2\par
+"d"\tab\tab 3\par
+"e"\tab\tab 4\par
+Example:\par
+print(letters[2])  # Output: c\par
+This accesses the third element in the list, since index 2 refers to the third position.\par
+\f3\u-10179?\u-8903?\f1  \f0 Negative Indexing\par
+Negative indexing is used to access elements from the end of the list, starting with -1 for the last element, -2 for the second last, and so on.\par
+Element\tab Index\par
+"a"\tab\tab -5\par
+"b"\tab\tab -4\par
+"c"\tab\tab -3\par
+"d"\tab\tab -2\par
+"e"\tab\tab -1\par
+Example:\par
+print(letters[-1])  # Output: e\par
+print(letters[-3])  # Output: c\par
+Negative indexing is very useful when you want to quickly refer to the last elements of a list, especially when you don\f1\rquote\f0 t know the exact length of the list.\par
+\par
+\b\par
+\f2\'b7\f0  Slicing a list: accessing a range of elements. \par
+\b0 Slicing is used to access a subsection or subset of a list. It allows us to retrieve multiple elements at once by specifying a range of indices. The basic syntax of slicing is:\par
+list[start:stop]\par
+start is the index to begin the slice (inclusive)\par
+stop is the index to end the slice (exclusive)\par
+\f3\u-10179?\u-8903?\f1  \f0 Example:\par
+numbers = [10, 20, 30, 40, 50, 60]\par
+print(numbers[1:4])  # Output: [20, 30, 40]\par
+Explanation:\par
+Starts at index 1 (20)\par
+Ends before index 4 (so 50 is excluded)\par
+Returns elements at index 1, 2, and 3\par
+\f3\u-10179?\u-8903?\f1  \f0 Omitting Start or Stop:\par
+If start is omitted, slicing starts from the beginning.\par
+If stop is omitted, slicing goes till the end.\par
+print(numbers[:3])   # Output: [10, 20, 30]\par
+print(numbers[3:])   # Output: [40, 50, 60]\par
+\f3\u-10179?\u-8903?\f1  \f0 Step Size in Slicing:\par
+The full slicing syntax is:\par
+list[start:stop:step]\par
+step defines how many elements to skip.\par
+Example:\par
+print(numbers[::2])   # Output: [10, 30, 50]\par
+Here, the slice starts at the beginning and includes every second element.\par
+\f3\u-10179?\u-8903?\f1  \f0 Negative Slicing:\par
+You can also slice lists in reverse using negative indices and steps:\par
+print(numbers[::-1])   # Output: [60, 50, 40, 30, 20, 10]  (reverse list)\par
+print(numbers[-4:-1])  # Output: [30, 40, 50]\par
+\f4\u9989?\f1  \f0 Key Points to Remember:\par
+Indexing is used to access individual elements.\par
+Positive indexing starts from 0, going left to right.\par
+Negative indexing starts from -1, going right to left.\par
+Slicing is used to get a portion of the list, and it always returns a new list.\par
+The stop index in slicing is not included in the result.\par
+You can use step to skip elements or reverse the list.\b\par
+  \par
+2. List Operations \par
+Theory: \par
+\f2\'b7\f0  Common list operations: concatenation, repetition, membership.\par
+\b0 Concatenation means joining two or more lists together using the + operator. It creates a new list by combining the elements of the original lists.\par
+\f4\u9989?\f1  \f0 Syntax:\par
+list3 = list1 + list2\par
+\f4\u9989?\f1  \f0 Example:\par
+a = [1, 2, 3]\par
+b = [4, 5]\par
+c = a + b\par
+print(c)  # Output: [1, 2, 3, 4, 5]\par
+\f3\u-10179?\u-8903?\f1  \f0 2. Repetition\par
+Repetition allows you to repeat the elements of a list multiple times using the * operator.\par
+\f4\u9989?\f1  \f0 Syntax:\par
+list2 = list1 * n\par
+\f4\u9989?\f1  \f0 Example:\par
+a = ["Hi"]\par
+b = a * 3\par
+print(b)  # Output: ['Hi', 'Hi', 'Hi']\par
+\f3\u-10179?\u-8903?\f1  \f0 3. Membership\par
+Membership is used to check if an element exists in a list using the in or not in operators.\par
+\f4\u9989?\f1  \f0 Example:\par
+fruits = ["apple", "banana", "cherry"]\par
+print("banana" in fruits)   # Output: True\par
+print("grape" not in fruits)  # Output: True\b  \par
+\par
+\f2\'b7\f0  Understanding list methods like append(), insert(), remove(), pop(). \par
+ \b0 Python provides many built-in list methods to add, modify, or delete elements easily. Four of the most commonly used methods are:\par
+\f3\u-10179?\u-8903?\f1  \f0 1. append()\par
+Adds a single element to the end of the list.\par
+Modifies the list in-place.\par
+\f4\u9989?\f1  \f0 Syntax:\par
+list.append(element)\par
+\f4\u9989?\f1  \f0 Example:\par
+fruits = ["apple", "banana"]\par
+fruits.append("cherry")\par
+print(fruits)  # Output: ['apple', 'banana', 'cherry']\par
+\f3\u-10179?\u-8903?\f1  \f0 2. insert()\par
+Inserts an element at a specific index.\par
+Shifts other elements to the right.\par
+\f4\u9989?\f1  \f0 Syntax:\par
+list.insert(index, element)\par
+\f4\u9989?\f1  \f0 Example:\par
+numbers = [10, 20, 30]\par
+numbers.insert(1, 15)\par
+print(numbers)  # Output: [10, 15, 20, 30]\par
+\f3\u-10179?\u-8903?\f1  \f0 3. remove()\par
+Removes the first occurrence of a specific value.\par
+Raises an error if the value is not found.\par
+\f4\u9989?\f1  \f0 Syntax:\par
+list.remove(value)\par
+\f4\u9989?\f1  \f0 Example:\par
+items = ["pen", "pencil", "eraser"]\par
+items.remove("pencil")\par
+print(items)  # Output: ['pen', 'eraser']\par
+\f3\u-10179?\u-8903?\f1  \f0 4. pop()\par
+Removes and returns the element at the given index.\par
+If no index is provided, removes the last item.\par
+\f4\u9989?\f1  \f0 Syntax:\par
+list.pop(index)  # index is optional\par
+\f4\u9989?\f1  \f0 Example:\par
+colors = ["red", "green", "blue"]\par
+removed = colors.pop()\par
+print(colors)       # Output: ['red', 'green']\par
+print(removed)      # Output: blue\b  \par
+ \par
+3. Working with Lists \par
+Theory: \par
+\f2\'b7\f0  Iterating over a list using loops. \par
+\b0 Definition:\par
+Iteration means accessing each element in a list one by one using a loop. This is useful for reading, processing, or modifying list items.\par
+\f3\u-10179?\u-8903?\f1  \f0 Types of Loops Used:\par
+for loop \f1\endash  most common and simple for list traversal\par
+while loop \endash  used when the index is managed manually\par
+\f4\u9989?\f1  \f0 Using a for loop:\par
+fruits = ["apple", "banana", "cherry"]\par
+\par
+for fruit in fruits:\par
+    print(fruit)\par
+Output:\par
+apple\par
+banana\par
+cherry\par
+\f4\u9989?\f1  \f0 Using a for loop with range() and index:\par
+for i in range(len(fruits)):\par
+    print(f"Element at index \{i\} is \{fruits[i]\}")\par
+Output:\par
+Element at index 0 is apple\par
+Element at index 1 is banana\par
+Element at index 2 is cherry\par
+\f4\u9989?\f1  \f0 Using a while loop:\par
+i = 0\par
+while i < len(fruits):\par
+    print(fruits[i])\par
+    i += 1\par
+\b\par
+\f2\'b7\f0  Sorting and reversing a list using sort(), sorted(), and reverse(). \par
+\b0 Sorting:\par
+Sorting is the process of arranging elements in ascending or descending order.\par
+\f4\u9989?\f1  \f0 sort() Method:\par
+Sorts the original list in-place.\par
+Modifies the list itself.\par
+By default, sorts in ascending order.\par
+numbers = [5, 2, 9, 1]\par
+numbers.sort()\par
+print(numbers)  # Output: [1, 2, 5, 9]\par
+To sort in descending order:\par
+numbers.sort(reverse=True)\par
+print(numbers)  # Output: [9, 5, 2, 1]\par
+\f4\u9989?\f1  \f0 sorted() Function:\par
+Returns a new sorted list.\par
+Does not change the original list.\par
+numbers = [5, 2, 9, 1]\par
+sorted_numbers = sorted(numbers)\par
+print(sorted_numbers)  # Output: [1, 2, 5, 9]\par
+print(numbers)         # Original list remains: [5, 2, 9, 1]\par
+\f4\u9989?\f1  \f0 reverse() Method:\par
+Reverses the list in-place.\par
+Does not sort, just reverses current order.\par
+names = ["Alice", "Bob", "Charlie"]\par
+names.reverse()\par
+print(names)  # Output: ['Charlie', 'Bob', 'Alice']\par
+\b\par
+\f2\'b7\f0  Basic list manipulations: addition, deletion, updating, and slicing. \par
+\b0  Addition (Adding Elements)\par
+You can add elements using:\par
+append() \f1\endash  adds to end\par
+insert() \endash  adds at a specific index\par
+extend() \endash  adds elements from another list\par
+a = [1, 2]\par
+a.append(3)        # [1, 2, 3]\par
+a.insert(1, 10)    # [1, 10, 2, 3]\par
+a.extend([4, 5])   # [1, 10, 2, 3, 4, 5]\par
+\f3\u-10179?\u-8903?\f1  \f0 Deletion (Removing Elements)\par
+You can remove elements using:\par
+remove(value) \f1\endash  removes the first occurrence of value\par
+pop(index) \endash  removes and returns item at index\par
+del \endash  deletes element or entire list\par
+a = [1, 2, 3, 4, 5]\par
+a.remove(3)      # [1, 2, 4, 5]\par
+a.pop(1)         # [1, 4, 5] \endash  removes item at index 1\par
+del a[0]         # [4, 5] \endash  deletes first item\par
+\f3\u-10179?\u-8903?\f1  \f0 Updating (Modifying Elements)\par
+You can update an element directly by index:\par
+a = ["apple", "banana", "cherry"]\par
+a[1] = "orange"\par
+print(a)  # Output: ['apple', 'orange', 'cherry']\par
+\f3\u-10179?\u-8903?\f1  \f0 Slicing (Accessing a Subset of Elements)\par
+Slicing allows access to a part of the list using list[start:stop:step].\par
+nums = [10, 20, 30, 40, 50, 60]\par
+print(nums[1:4])      # Output: [20, 30, 40]\par
+print(nums[:3])       # Output: [10, 20, 30]\par
+print(nums[::2])      # Output: [10, 30, 50]\par
+print(nums[::-1])     # Output: [60, 50, 40, 30, 20, 10] \f1\endash  reversed list\b\f0\par
+  \par
+4. Tuple \par
+Theory: \par
+\f2\'b7\f0  Introduction to tuples, immutability. \par
+\b0 A tuple in Python is a built-in data structure that allows you to store multiple values in a single variable. A tuple is similar to a list, but with one important difference: tuples are immutable.\par
+Tuples are defined using parentheses (), and the items inside are separated by commas.\par
+example_tuple = (10, 20, 30)\par
+\f3\u-10179?\u-8903?\f1  \f0 Immutability of Tuples\par
+Immutability means that once a tuple is created, it cannot be changed. You cannot:\par
+Add new elements to it\par
+Remove elements from it\par
+Modify existing elements\par
+This makes tuples:Faster than lists\par
+Safe for data that should not be modified accidentally\par
+Useful as keys in dictionaries (unlike lists)\par
+\f4\u9989?\f1  \f0 Example:\par
+my_tuple = (1, 2, 3)\par
+# my_tuple[0] = 5  # \f4\u10060?\f1  \f0 Error! Tuples are immutable\par
+Trying to change a tuple item will raise a TypeError.\par
+\b\par
+\f2\'b7\f0  Creating and accessing elements in a tuple. \par
+\b0 Creating Tuples\par
+Tuples can be created in various ways:\par
+\f4\u9989?\f1  \f0 Examples:\par
+empty_tuple = ()                         \tab   # Empty tuple\par
+single_element = (5,)                      # Tuple with one item (note the comma)\par
+multi_item = (1, "hello", 3.14, True)      # Tuple with different data types\par
+nested_tuple = (1, (2, 3), ["a", "b"])     # Tuple with nested list/tuple\par
+\f3\u-10179?\u-8904?\f1  \f0 Important: A tuple with one element must have a comma (e.g., (5,)) or Python will treat it as a regular value inside parentheses.\par
+\f3\u-10179?\u-8903?\f1  \f0 Accessing Tuple Elements\par
+Tuple elements are accessed by their index, starting from 0.\par
+\f4\u9989?\f1  \f0 Example:\par
+colors = ("red", "blue", "green")\par
+print(colors[0])     # Output: red\par
+print(colors[2])     # Output: green\par
+Like lists, negative indexing is also allowed:\par
+print(colors[-1])    # Output: green\par
+\b\par
+\f2\'b7\f0  Basic operations with tuples: concatenation, repetition, membership. \par
+\b0 Even though tuples are immutable, you can still perform various read-only operations, such as:\par
+\f3\u-10179?\u-8903?\f1  \f0 a) Concatenation\par
+You can join two or more tuples using the + operator. This creates a new tuple.\par
+\f4\u9989?\f1  \f0 Example:\par
+t1 = (1, 2)\par
+t2 = (3, 4)\par
+result = t1 + t2\par
+print(result)  # Output: (1, 2, 3, 4)\par
+\f3\u-10179?\u-8903?\f1  \f0 b) Repetition\par
+You can repeat a tuple using the * operator.\par
+\f4\u9989?\f1  \f0 Example:\par
+t = ("hi",) * 3\par
+print(t)  # Output: ('hi', 'hi', 'hi')\par
+\f3\u-10179?\u-8903?\f1  \f0 c) Membership Test\par
+You can check whether an element exists in a tuple using the in or not in operators.\par
+\f4\u9989?\f1  \f0 Example:\par
+animals = ("cat", "dog", "cow")\par
+print("dog" in animals)     # Output: True\par
+print("lion" not in animals)  # Output: True\b\par
+ \par
+ \par
+5. Accessing Tuples \par
+Theory: \par
+\f2\'b7\f0  Accessing tuple elements using positive and negative indexing. \par
+\b0 Indexing is the method of accessing elements in a tuple using their position (or index).\par
+Python supports two types of indexing:\par
+Positive indexing (starts from the beginning)\par
+Negative indexing (starts from the end)\par
+\f3\u-10179?\u-8904?\f1  \f0 Positive Indexing\par
+In positive indexing:\par
+The first element has index 0\par
+The second element has index 1\par
+And so on...\par
+\f4\u9989?\f1  \f0 Example:\par
+fruits = ("apple", "banana", "cherry", "date", "fig")\par
+print(fruits[0])  # Output: apple\par
+print(fruits[2])  # Output: cherry\par
+\f3\u-10179?\u-8904?\f1  \f0 Negative Indexing\par
+In negative indexing:\par
+The last element has index -1\par
+The second last has index -2\par
+And so on...\par
+\f4\u9989?\f1  \f0 Example:\par
+print(fruits[-1])  # Output: fig\par
+print(fruits[-3])  # Output: cherry\par
+\b\par
+\f2\'b7\f0  Slicing a tuple to access ranges of elements. \par
+ \b0 Slicing is a technique to retrieve a subset or a range of elements from a tuple.\par
+It uses the colon : operator with optional start, stop, and step values.\par
+\f3\u-10179?\u-8904?\f1  \f0 Syntax:\par
+tuple_name[start : stop : step]\par
+start \f5\u8594?\f1  \f0 Index to begin the slice (inclusive)\par
+stop \f5\u8594?\f1  \f0 Index to end the slice (exclusive)\par
+step \f5\u8594?\f1  \f0 Optional; how many steps to jump\par
+\f4\u9989?\f1  \f0 Examples:\par
+numbers = (10, 20, 30, 40, 50, 60)\par
+print(numbers[1:4])    # Output: (20, 30, 40) \f5\u8594?\f1  \f0 from index 1 to 3\par
+print(numbers[:3])     # Output: (10, 20, 30) \f5\u8594?\f1  \f0 from beginning to index 2\par
+print(numbers[3:])     # Output: (40, 50, 60) \f5\u8594?\f1  \f0 from index 3 to end\par
+print(numbers[::2])    # Output: (10, 30, 50) \f5\u8594?\f1  \f0 every second element\par
+print(numbers[::-1])   # Output: (60, 50, 40, 30, 20, 10) \f5\u8594?\f1  \f0 reversed tuple\b\lang9\par
+\par
+ \par
+6. Dictionaries \par
+ \par
+Theory: \par
+ \par
+\f2\'b7\f0  Introduction to dictionaries: key-value pairs. \par
+\b0 A dictionary in Python is an unordered, mutable collection of data that stores values in key-value pairs. Dictionaries are widely used for situations where data needs to be associated with a unique identifier or key.\par
+Syntax:\par
+my_dict = \{\par
+    "name": "Alice",\par
+    "age": 25,\par
+    "city": "New York"\par
+\}\par
+In the above dictionary:\par
+"name", "age", and "city" are keys.\par
+"Alice", 25, and "New York" are the values.\par
+Each key must be unique and immutable (like strings, numbers, or tuples).\par
+Values can be of any data type and can even be other dictionaries or lists.\par
+Why dictionaries?\par
+Efficient lookup and retrieval using keys.\par
+Great for storing structured data like records.\par
+\par
+\b\par
+\f2\'b7\f0  Accessing, adding, updating, and deleting dictionary elements. \par
+\b0 You can access values using their keys:\par
+print(my_dict["name"])  # Output: Alice\par
+If the key does not exist, it raises a KeyError. To avoid this:\par
+print(my_dict.get("name"))  # Output: Alice\par
+print(my_dict.get("gender", "Not found"))  # Output: Not found\par
+\f4\u9989? Adding Elements:\par
+To add a new key-value pair:\par
+my_dict["gender"] = "Female"\par
+\u9989? Updating Elements:\par
+To update an existing value:\par
+my_dict["age"] = 26\par
+\u9989? Deleting Elements:\par
+There are several ways to delete items:\par
+Using del:\par
+del my_dict["city"]\par
+Using pop():\par
+my_dict.pop("gender")\par
+Using clear() to empty the dictionary:\par
+my_dict.clear()\par
+\par
+\b\f0\par
+\f2\'b7\f0  Dictionary methods like keys(), values(), and items(). \par
+ \b0 These built-in methods help you retrieve specific parts of the dictionary:\par
+\par
+\f3\u-10179?\u-8903? keys():\par
+Returns a view object of all the keys:\par
+print(my_dict.keys())  # dict_keys(['name', 'age'])\par
+\u-10179?\u-8903? values():\par
+Returns a view object of all the values:\par
+print(my_dict.values())  # dict_values(['Alice', 26])\par
+\u-10179?\u-8903? items():\par
+Returns a view object of all the key-value pairs as tuples:\par
+print(my_dict.items())  # dict_items([('name', 'Alice'), ('age', 26)])\par
+These views are dynamic\f6\emdash if the dictionary changes, the views reflect the changes.\b\f0\par
+ \par
+ \par
+7. Working with Dictionaries \par
+Theory: \par
+
+\pard\sa200\sl276\slmult1\tx2982\f2\'b7\f0  Iterating over a dictionary using loops. \par
+\b0 In Python, dictionaries are iterable. You can use a for loop to go through keys, values, or key-value pairs.\par
+\par
+\f4\u9989? Example 1: Iterating Over Keys\par
+student = \{"name": "Aanya", "age": 21, "course": "BCA"\}\par
+\par
+for key in student:\par
+    print("Key:", key)\par
+\u9989? Example 2: Iterating Over Values\par
+for value in student.values():\par
+    print("Value:", value)\par
+\u9989? Example 3: Iterating Over Key-Value Pairs\par
+for key, value in student.items():\par
+    print(f"\{key\}: \{value\}")\par
+Explanation:\par
+student.keys() returns all the keys.\par
+student.values() returns all the values.\par
+student.items() returns (key, value) pairs as tuples.\par
+Looping this way is useful when displaying, searching, or modifying data in a dictionary.\par
+\par
+\b\f0\par
+\f2\'b7\f0  Merging two lists into a dictionary using loops or zip(). \par
+\b0 You can merge two lists\f1\emdash one containing keys and the other containing values\emdash into a single dictionary.\par
+\par
+\f4\u9989? Using zip() Function\par
+keys = ["id", "name", "department"]\par
+values = [101, "Ravi", "IT"]\par
+employee = dict(zip(keys, values))\par
+print(employee)\par
+Output:\par
+\{'id': 101, 'name': 'Ravi', 'department': 'IT'\}\par
+\u9989? Using a Loop\par
+keys = ["id", "name", "department"]\par
+values = [101, "Ravi", "IT"]\par
+\par
+employee = \{\}\par
+for i in range(len(keys)):\par
+    employee[keys[i]] = values[i]\par
+print(employee)\par
+Explanation:\par
+zip() pairs each element from the first list with the corresponding element from the second list.\par
+A loop can also achieve the same by using index-based assignment.\par
+\par
+\b\f0\par
+\f2\'b7\f0  Counting occurrences of characters in a string using dictionaries. \par
+\b0 Dictionaries are ideal for frequency counting, such as counting how many times each character appears in a string.\par
+\par
+\f4\u9989? Example Program\par
+text = "dictionary"\par
+char_count = \{\}\par
+for char in text:\par
+    if char in char_count:\par
+        char_count[char] += 1  # Increment count if character already exists\par
+    else:\par
+        char_count[char] = 1   # Add new character with count 1\par
+\par
+print("Character Frequency:")\par
+for char, count in char_count.items():\par
+    print(f"\{char\}: \{count\}")\par
+Output:\par
+Character Frequency:\par
+d: 1\par
+i: 2\par
+c: 1\par
+t: 1\par
+o: 1\par
+n: 1\par
+a: 1\par
+r: 1\par
+y: 1\par
+Explanation:\par
+The program initializes an empty dictionary char_count.\par
+It iterates over each character in the string.\par
+If the character is already in the dictionary, its count is incremented.\par
+Otherwise, it is added to the dictionary with a count of 1.\b\f0\par
+
+\pard\sa200\sl276\slmult1   \par
+\par
+8. Functions \par
+ \par
+Theory: \par
+ \par
+\f2\'b7\f0  Defining functions in Python. \par
+\b0 A function in Python is a block of reusable code designed to perform a specific task. It helps reduce repetition, makes code organized, and promotes modularity.\par
+\par
+\f4\u9989? Syntax of a Function:\par
+def function_name(parameters):\par
+    # function body\par
+    return result\par
+\u9989? Example:\par
+def greet():\par
+    print("Hello, welcome to Python!")\par
+Explanation:\par
+def is the keyword to define a function.\par
+greet() is the function name.\par
+Parentheses () may include parameters (inputs).\par
+The return statement sends back a result (optional).\par
+\b\f0\par
+\f2\'b7\f0  Different types of functions: with/without parameters, with/without return values. \par
+\b0 Python supports various types of functions based on parameters and return values.\par
+\par
+\f3\u-10179?\u-8903? A) Function without Parameters and without Return Value\par
+This function does not take any input and does not return any result. It just performs a task.\par
+\par
+def say_hello():\par
+    print("Hello, World!")\par
+\par
+say_hello()\par
+\u-10179?\u-8903? B) Function with Parameters and without Return Value\par
+Takes input but does not return a result. It only performs a task using the inputs.\par
+\par
+def greet_user(name):\par
+    print("Hello,", name)\par
+\par
+greet_user("Anjali")\par
+\u-10179?\u-8903? C) Function without Parameters and with Return Value\par
+Does not take input, but returns a result.\par
+def get_pi():\par
+    return 3.14159\par
+\par
+pi_value = get_pi()\par
+print("Value of PI:", pi_value)\par
+\u-10179?\u-8903? D) Function with Parameters and with Return Value\par
+This is the most flexible type. Takes input and returns a computed result.\par
+def add(a, b):\par
+    return a + b\par
+result = add(5, 7)\par
+print("Sum:", result)\par
+\par
+\b\f0\par
+\f2\'b7\f0  Anonymous functions (lambda functions). \par
+ \b0 Python also supports anonymous functions, which are functions without a name. These are defined using the lambda keyword and are usually used for short, simple operations.\par
+\par
+\f4\u9989? Syntax:\par
+lambda arguments: expression\par
+\u9989? Example 1: Add Two Numbers\par
+add = lambda a, b: a + b\par
+print("Sum:", add(3, 4))  # Output: 7\par
+\u9989? Example 2: Square a Number\par
+square = lambda x: x * x\par
+print("Square:", square(5))  # Output: 25\par
+\u9989? Example 3: Lambda in map() or filter()\par
+nums = [1, 2, 3, 4, 5]\par
+squared = list(map(lambda x: x**2, nums))\par
+print("Squares:", squared)  # Output: [1, 4, 9, 16, 25]\par
+\f7\u9888?\u-497? Note:\par
+Lambda functions cannot contain multiple expressions or statements.\par
+They are useful in scenarios where you need a short function temporarily (like inside map(), filter(), or sorted()).\par
+\u9989? Conclusion\par
+Functions in Python are essential for breaking down large tasks into smaller, manageable pieces of code. With support for different types (based on input/output) and anonymous functions (lambda), Python offers a powerful and flexible approach to programming tasks.\par
+\b\f0   \par
+ \par
+ \par
+9. Modules \par
+ \par
+Theory: \par
+ \par
+\f2\'b7\f0  Introduction to Python modules and importing modules. \par
+\b0 What is a Module?\par
+A module in Python is simply a file containing Python code \f1\emdash  functions, variables, classes \emdash  which you can reuse in other programs. Modules help in organizing code into logical, manageable, and reusable pieces.\par
+\par
+\f4\u9989? Why Use Modules?\par
+Reuse code across multiple programs\par
+\par
+Organize large projects\par
+\par
+Reduce duplication and improve maintainability\par
+\par
+\u9989? Importing Modules\par
+You can import modules using the import statement:\par
+import math\par
+You can also import specific parts of a module:\par
+from math import sqrt\par
+Or give a module an alias:\par
+import random as rnd\par
+\par
+\b\f0\par
+\f2\'b7\f0  Standard library modules: math, random. \par
+\b0 Python includes a rich set of built-in modules known as the Standard Library. Two commonly used ones are math and random.\par
+\par
+\f4\u9989? math Module\par
+This module provides mathematical functions like square root, trigonometry, logarithms, etc.\par
+\par
+Example:\par
+import math\par
+\par
+print("Square root of 16:", math.sqrt(16))\par
+print("Value of Pi:", math.pi)\par
+print("Sine of 90 degrees:", math.sin(math.radians(90)))\par
+Common Functions:\par
+\par
+Function\tab\f8\lang1033\tab\f4\lang9 Description\par
+math.sqrt(x)\tab\f8\lang1033\tab\f4\lang9 Square root of x\par
+math.pow(x,y)\tab\f8\lang1033\tab\f4\lang9 x raised to the power y\par
+math.pi\tab\f8\lang1033\tab\f4\lang9 Value of \f9\lang1032\'f0\par
+math.sin(x)\tab\f0\lang1033\tab\f9\lang1032 Sine of x (in radians)\par
+math.radians(x)\tab Converts degrees to radians\par
+\par
+\f4\u9989? random Module\par
+This module is used to generate random numbers and perform random selections, useful in simulations, games, and testing.\par
+\par
+Example:\par
+import random\par
+\par
+print("Random number between 1 and 10:", random.randint(1, 10))\par
+print("Random choice from list:", random.choice(['apple', 'banana', 'cherry']))\par
+Common Functions:\par
+\par
+Function\tab Description\par
+random.randint(a,b)\tab Random integer from a to b\par
+random.random()\tab Random float between 0.0 to 1.0\par
+random.choice(seq)\tab Random element from a sequence (list, etc.)\par
+random.shuffle(lst)\tab Shuffles elements of a list in place\par
+\b\f0\lang9\par
+\f2\'b7\f0  Creating custom modules. \par
+ \b0 You can create your own module by writing functions or variables in a Python file and importing it into other programs.\par
+\par
+\f4\u9989? Step-by-Step:\par
+\f3\u-10179?\u-8903? Step 1: Create a Python file named my_module.py\par
+# my_module.py\par
+\par
+def greet(name):\par
+    return f"Hello, \{name\}!"\par
+\par
+def square(num):\par
+    return num * num\par
+\u-10179?\u-8903? Step 2: Import and Use This Module in Another File\par
+# main.py\par
+import my_module\par
+\par
+print(my_module.greet("Anjali"))\par
+print("Square of 5:", my_module.square(5))\par
+Output:\par
+Hello, Anjali!\par
+Square of 5: 25\par
+\f4\u9989? Notes:\par
+Custom modules must be in the same directory or in Python\rquote s search path.\par
+You can also import specific functions:\par
+from my_module import greet\par
+\b\f0  \par
+\par
+}
+ 
