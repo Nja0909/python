@@ -1,0 +1,15 @@
+1) Items with price ≥ 250, ordered by price (DESC), then name (ASC)
+
+select  PRO_NAME,  PRO_PRICE from product where  PRO_PRICE >= 250 ORDER BY PRO_PRICE DESC, PRO_NAME ASC;
+
+2) Find the cheapest item (lowest price)
+
+select  PRO_NAME,  PRO_PRICE from product where  PRO_PRICE = (SELECT MIN(PRO_PRICE) from product );
+
+3) Average price of items for each company (group by PRO_COM)
+
+select PRO_COM,  AVG(PRO_PRICE) AS AVG_PRICE from product GROUP BY PRO_COM;
+
+4) Average total price of all products in the table
+
+select AVG(PRO_PRICE) AS AVG_TOTAL_PRICE from  product;
